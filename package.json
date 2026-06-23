@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:setup": "mysql -u root -p < schema.sql"
+    "db:setup": "mysql -u root -p < schema.sql",
+    "unread:map": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/unread-sender-map.ts"
   },
   "dependencies": {
     "googleapis": "^144.0.0",

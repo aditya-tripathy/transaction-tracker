@@ -108,6 +108,22 @@ For continuous background sync:
 npx ts-node scripts/scheduler.ts
 ```
 
+### 8. (Optional) Unread Sender Map
+
+List every email carrying the `UNREAD` label and print a sender → count map,
+sorted by volume. Reuses the same Gmail OAuth credentials as the app.
+
+```bash
+npm run unread:map
+```
+
+Notes:
+- Requires `GMAIL_CLIENT_ID/SECRET/REDIRECT_URI/REFRESH_TOKEN` in `.env`.
+- Pages through all unread messages and fetches only the `From` header per
+  message (fast, low quota).
+- Progress is logged to stderr; the final table is printed to stdout, so you can
+  redirect it: `npm run unread:map > unread.txt`.
+
 ## Usage
 
 ### Dashboard
